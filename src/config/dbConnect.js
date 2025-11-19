@@ -1,7 +1,11 @@
 import mongoose from "mongoose"
 
-mongoose.connect("mongodb+srv://alura:123@alura.dkjed.mongodb.net/alura-node");
 
-let db = mongoose.connection;
+async function conectarDataBase(){
+mongoose.connect(process.env.DB_CONNECTION_STRING);
 
-export default db;
+return mongoose.connection;
+}
+
+
+export default conectarDataBase;

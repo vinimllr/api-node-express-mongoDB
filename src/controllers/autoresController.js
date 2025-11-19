@@ -44,6 +44,9 @@ class AutorController {
       try {
         const id = req.params.id;
   
+        //notação do mongoDB que significa que iremos usar o que vier no body para substituir o resultados
+        //Sem o $set o mongoose entende que vamos substituir todos campos, sobrescrevando possivelmente campos
+        //que não estão sendo usadoss
         await autores.findByIdAndUpdate(id, {$set: req.body});
   
         res.status(200).send({message: "Autor atualizado com sucesso"});

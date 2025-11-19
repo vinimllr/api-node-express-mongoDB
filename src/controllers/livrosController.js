@@ -5,6 +5,7 @@ class LivroController {
   static listarLivros = async (req, res) => {
     try {
       const livrosResultado = await livros.find()
+      //basicamente pegue o campo autor, que contém um ID, e substitua pelo documento completo do autor.
         .populate("autor")
         .exec();
 
