@@ -1,3 +1,4 @@
+import NaoEncontrado from "../erros/Pagina404.js";
 import livros from "../models/Livro.js";
 
 class LivroController {
@@ -23,7 +24,11 @@ class LivroController {
         .populate("autor", "nome")
         .exec();
 
-      res.status(200).send(livroResultados);
+      if(livroResultados != null){
+        res.status(200).send(livroResultados);
+      }else{
+        next(new NaoEncontrado("Livro não localizado."))
+      }
     } catch (erro) {
       next(erro);
     }

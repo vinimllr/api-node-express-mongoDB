@@ -1,3 +1,4 @@
+import NaoEncontrado from "../erros/Pagina404.js";
 import autores from "../models/Autor.js";
 //Importante: estamos usando uma instância do mongoose no comparativo, devemos então importar
 //evitando referenceError
@@ -24,7 +25,7 @@ class AutorController {
       if (autorResultado != null) {
         res.status(200).send(autorResultado);
       } else {
-        res.status(404).send({ message: `Id do Autor não localizado.` })
+       next(new NaoEncontrado(`Id do Autor não localizado.`))
       }
     } catch (erro) {
       next(erro);
