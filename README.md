@@ -1,4 +1,6 @@
 # Node JS lidando com filtros, listas e API
+## Introdução
+Este README tem por objetivo evidenciar todos conceitos aprendidos durante o projeto
 ## Iniciando o projeto
 Abra com o editor de código de sua escolha e inicie com **`npm i`**
 Inicie as variáveis de ambiente de acordo com o próximo tópico e rode **`npm run dev`**
