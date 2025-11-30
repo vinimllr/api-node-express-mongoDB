@@ -1,8 +1,8 @@
 import "dotenv/config";
 import app from './src/app.js'
-import manipuladorDeErros from "./src/middleweres/ManipuladorDeErros.js";
+import manipuladorDeErros from "./src/middlewares/manipuladorDeErros.js";
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 
 app.listen(port, () => {
