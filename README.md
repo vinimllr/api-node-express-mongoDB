@@ -227,5 +227,3 @@ static listarLivroPorFiltro = async (req, res, next) => {
 // Código omitido
 ```
 Basicamente se tivermos algum dos dois diferente de vazio ou nulo adicionamos na nossa busca.
-
-## Paginação
